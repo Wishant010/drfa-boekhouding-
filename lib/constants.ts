@@ -1,5 +1,5 @@
 // Productie-URL van de site (gebruikt voor canonical, sitemap, Open Graph en schema)
-export const SITE_URL = "https://www.admindrfa.nl";
+export const SITE_URL = "https://www.drfa.nl";
 
 // Contact Information
 export const CONTACT = {
