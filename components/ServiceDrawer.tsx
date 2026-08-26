@@ -175,7 +175,7 @@ export function ServiceDrawer({ service, onClose }: ServiceDrawerProps) {
             "inset-x-0 bottom-0 h-[92dvh] rounded-t-[26px]",
             "data-[state=open]:animate-in data-[state=closed]:animate-out",
             "data-[state=open]:slide-in-from-bottom data-[state=closed]:slide-out-to-bottom",
-            "data-[state=open]:duration-[320ms] data-[state=closed]:duration-[280ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+            "data-[state=open]:[animation-duration:320ms] data-[state=closed]:[animation-duration:280ms] [animation-timing-function:cubic-bezier(0.22,1,0.36,1)]",
             // desktop: paneel rechts
             "md:inset-x-auto md:inset-y-0 md:right-0 md:h-[100dvh] md:w-[min(540px,92vw)] md:rounded-none",
             "md:data-[state=open]:slide-in-from-bottom-0 md:data-[state=closed]:slide-out-to-bottom-0",
