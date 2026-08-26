@@ -40,7 +40,7 @@ const SplitText: React.FC<SplitTextProps> = ({
   textAlign = 'center',
   onLetterAnimationComplete
 }) => {
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLSpanElement>(null);
   const animationCompletedRef = useRef(false);
   const onCompleteRef = useRef(onLetterAnimationComplete);
   const [fontsLoaded, setFontsLoaded] = useState<boolean>(false);
@@ -97,6 +97,9 @@ const SplitText: React.FC<SplitTextProps> = ({
       };
       const splitInstance = new GSAPSplitText(el, {
         type: splitType,
+        // aria-label op een span zonder rol is niet toegestaan (axe: aria-prohibited-attr);
+        // de tekst staat al in een sr-only span, dus GSAP hoeft geen aria toe te voegen
+        aria: 'none',
         smartWrap: true,
         autoSplit: splitType === 'lines',
         linesClass: 'split-line',
@@ -168,8 +171,11 @@ const SplitText: React.FC<SplitTextProps> = ({
     const Tag = (tag || 'p') as React.ElementType;
 
     return (
-      <Tag ref={ref} style={style} className={classes}>
-        {text}
+      <Tag>
+        <span className="sr-only">{text}</span>
+        <span ref={ref} style={style} className={classes} aria-hidden="true">
+          {text}
+        </span>
       </Tag>
     );
   };
