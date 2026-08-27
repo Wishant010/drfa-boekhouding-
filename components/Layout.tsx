@@ -287,7 +287,7 @@ export function Footer() {
         {/* Onderste balk */}
         <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-sm text-slate-400 md:flex-row">
           <p>© {currentYear} {t.header.companyFull}. {t.footer.rights}.</p>
-          <p>KVK {CONTACT.kvk}, Haarlem</p>
+          <p>KVK {CONTACT.kvk} · BTW {CONTACT.btw}, Spijkenisse</p>
         </div>
       </div>
     </footer>

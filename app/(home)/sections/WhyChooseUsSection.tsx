@@ -4,6 +4,7 @@ import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import {
   ArrowRight,
+  BadgeCheck,
   Check,
   Eye,
   FileText,
@@ -12,6 +13,7 @@ import {
   Settings2,
   UserRound,
 } from "lucide-react";
+import { SOCIALS } from "@/lib/constants";
 import { useT } from "@/lib/i18n";
 
 // =============================================================================
@@ -375,10 +377,21 @@ export function WhyChooseUsSection() {
               </Link>
             </div>
 
-            {/* Trustline voor bestaande Moneybird-gebruikers */}
+            {/* Trustline voor bestaande gebruikers van Moneybird, e-boekhouden.nl of Jortt */}
             <p className="mt-5 flex items-center gap-1.5 text-[13px] text-[#73869A]">
               <Check className="h-3.5 w-3.5 shrink-0 text-[#18B99C]" />
               {t.why.trustline}
+            </p>
+            <p className="mt-2 flex items-center gap-1.5 text-[13px] text-[#73869A]">
+              <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-[#18B99C]" />
+              <a
+                href={SOCIALS.moneybirdExperts}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-[#BFD2E2] underline-offset-2 transition-colors hover:text-[#249BF4]"
+              >
+                {t.why.expertsLine}
+              </a>
             </p>
           </div>
 

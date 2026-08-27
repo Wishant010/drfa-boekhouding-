@@ -3,18 +3,21 @@ export const SITE_URL = "https://www.drfa.nl";
 
 // Contact Information
 export const CONTACT = {
-  email: "info@admindrfa.nl",
-  phone: "+31 6 54324404",
-  phoneDisplay: "06 5432 4404",
-  address: "Zevenwoudenplantsoen 11",
-  postalCity: "2036 NL Haarlem",
-  kvk: "91593344",
+  companyName: "DRFA",
+  email: "info@drfa.nl",
+  phone: "+31 6 40772472",
+  phoneDisplay: "06-40772472",
+  address: "Mina Krusemanstraat 34",
+  postalCity: "3207 DE Spijkenisse",
+  kvk: "88931102",
+  btw: "NL004095208B97",
   whatsapp: "31640772472",
 } as const;
 
 // Social Links
 export const SOCIALS = {
   instagram: "https://instagram.com/admindrfa",
+  moneybirdExperts: "https://www.moneybird.nl/experts-label/",
   whatsappUrl: (message: string) =>
     `https://wa.me/${CONTACT.whatsapp}?text=${encodeURIComponent(message)}`,
 } as const;

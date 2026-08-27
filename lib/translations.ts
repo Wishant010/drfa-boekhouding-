@@ -62,7 +62,7 @@ export const translations = {
       statText: "jaar ervaring in financiële administratie en advies.",
       statTagline: "Betrouwbaar. Betrokken. Bereikbaar.",
       imageAlt:
-        "DRFA werkplek met jaarrekening, administratie-overzicht en DRFA-documentmap",
+        "DRFA werkplek met administratie-overzicht en DRFA-documentmap",
       trustItems: [
         {
           title: "Binnen 24 uur reactie",
@@ -86,6 +86,7 @@ export const translations = {
       title: "Onze pakketten",
       subtitle: "Kies het pakket dat bij jouw situatie past. Upgraden kan altijd.",
       choosePrefix: "Kies",
+      exVat: "excl. btw",
       order: {
         titlePrefix: "Pakket",
         titleSuffix: "aanvragen",
@@ -126,7 +127,6 @@ export const translations = {
             "Tot 30 boekingen per maand",
             "Koppeling boekhoudsoftware",
             "Kwartaal-BTW-aangifte",
-            "Jaarrekening in Excel / PDF",
           ],
           highlighted: false,
         },
@@ -162,6 +162,45 @@ export const translations = {
         },
       ],
     },
+    privateTax: {
+      badge: "Ook voor particulieren",
+      title: "Aangifte inkomstenbelasting",
+      subtitle:
+        "Geen ondernemer? Ook dan helpen we je. We verzorgen je jaarlijkse aangifte inkomstenbelasting voor een vast, eenmalig tarief.",
+      period: "eenmalig",
+      cta: "Aanvragen",
+      note: "Alle tarieven zijn eenmalig, per belastingjaar.",
+      orderTitlePrefix: "",
+      orderTitleSuffix: "aanvragen",
+      waRequestLine: "Hallo! Ik wil graag een aanvraag doen voor: {package}.",
+      waDirectMessage:
+        "Hallo! Ik heb interesse in {package} en wil graag meer informatie.",
+      // TODO(owner): onderstaande prijzen zijn PLACEHOLDERS — vervang door de echte tarieven
+      items: [
+        {
+          name: "Aangifte standaard",
+          price: 75,
+          description: "Jaarlijkse aangifte inkomstenbelasting voor één persoon.",
+        },
+        {
+          name: "Aangifte met fiscale partner",
+          price: 125,
+          description:
+            "Aangifte voor jou en je fiscale partner, in één keer geregeld.",
+        },
+        {
+          name: "Aangifte migratie",
+          price: 150,
+          description:
+            "M-aangifte bij emigratie of immigratie in het belastingjaar.",
+        },
+        {
+          name: "Aangifte migratie met fiscale partner",
+          price: 200,
+          description: "M-aangifte voor jou en je fiscale partner samen.",
+        },
+      ],
+    },
     why: {
       titlePre: "Zo starten we ",
       titleGradient: "samen",
@@ -176,7 +215,8 @@ export const translations = {
       ctaPlan: "Plan kennismaking",
       ctaPackages: "Bekijk pakketten",
       trustline:
-        "Werk je al met Moneybird? Geen probleem, dan sluiten we aan op je bestaande administratie.",
+        "Werk je al met Moneybird, e-boekhouden.nl of Jortt? Geen probleem, we kijken mee in jouw bestaande administratie.",
+      expertsLine: "DRFA is aangesloten bij het Moneybird Experts-label",
       steps: [
         {
           number: "01",
@@ -235,6 +275,7 @@ export const translations = {
       businessInfo: "Bedrijfsgegevens",
       companyNameLabel: "Bedrijfsnaam",
       kvkLabel: "KVK-nummer",
+      btwLabel: "BTW-nummer",
       addressLabel: "Adres",
       availability: "Bereikbaarheid",
       monFri: "Maandag - Vrijdag",
@@ -343,7 +384,7 @@ export const translations = {
       statText: "years of experience in financial administration and advice.",
       statTagline: "Reliable. Committed. Accessible.",
       imageAlt:
-        "DRFA workspace with annual report, administration overview and DRFA document folder",
+        "DRFA workspace with administration overview and DRFA document folder",
       trustItems: [
         {
           title: "Response within 24 hours",
@@ -367,6 +408,7 @@ export const translations = {
       title: "Our packages",
       subtitle: "Choose the package that fits your situation. You can always upgrade.",
       choosePrefix: "Choose",
+      exVat: "excl. VAT",
       order: {
         titlePrefix: "Request the",
         titleSuffix: "package",
@@ -407,7 +449,6 @@ export const translations = {
             "Up to 30 bookings per month",
             "Accounting software integration",
             "Quarterly VAT returns",
-            "Annual accounts in Excel / PDF",
           ],
           highlighted: false,
         },
@@ -443,6 +484,45 @@ export const translations = {
         },
       ],
     },
+    privateTax: {
+      badge: "Also for private individuals",
+      title: "Income tax returns",
+      subtitle:
+        "Not a business owner? We can still help. We take care of your annual income tax return for a fixed one-off fee.",
+      period: "one-off",
+      cta: "Request",
+      note: "All fees are one-off, per tax year.",
+      orderTitlePrefix: "",
+      orderTitleSuffix: "request",
+      waRequestLine: "Hello! I would like to request: {package}.",
+      waDirectMessage:
+        "Hello! I'm interested in {package} and would like more information.",
+      // TODO(owner): prices below are PLACEHOLDERS — replace with the real fees
+      items: [
+        {
+          name: "Standard tax return",
+          price: 75,
+          description: "Annual income tax return for one person.",
+        },
+        {
+          name: "Tax return with fiscal partner",
+          price: 125,
+          description:
+            "Tax return for you and your fiscal partner, handled in one go.",
+        },
+        {
+          name: "Migration tax return",
+          price: 150,
+          description:
+            "M form for emigration or immigration during the tax year.",
+        },
+        {
+          name: "Migration return with fiscal partner",
+          price: 200,
+          description: "M form for you and your fiscal partner together.",
+        },
+      ],
+    },
     why: {
       titlePre: "This is how we ",
       titleGradient: "start together",
@@ -457,7 +537,8 @@ export const translations = {
       ctaPlan: "Schedule a meeting",
       ctaPackages: "View packages",
       trustline:
-        "Already using Moneybird? No problem, we simply connect to your existing administration.",
+        "Already using Moneybird, e-boekhouden.nl or Jortt? No problem, we work alongside you in your existing administration.",
+      expertsLine: "DRFA is part of the Moneybird Experts label",
       steps: [
         {
           number: "01",
@@ -516,6 +597,7 @@ export const translations = {
       businessInfo: "Company details",
       companyNameLabel: "Company name",
       kvkLabel: "KVK number",
+      btwLabel: "VAT number",
       addressLabel: "Address",
       availability: "Opening hours",
       monFri: "Monday - Friday",
@@ -570,7 +652,7 @@ export type Translations = (typeof translations)["nl"];
 
 // Engelse vertalingen van de standaard klantreviews, gekoppeld op review-id
 export const REVIEW_TEXTS_EN: Record<string, string> = {
-  "1": "Finally an accounting firm that understands what I need as a freelancer. Denny takes the time to explain everything and really thinks along. Great service!",
+  "1": "Finally an accounting firm that understands what I need as a freelancer. Dinesh takes the time to explain everything and really thinks along. Great service!",
   "2": "After years of stress about my bookkeeping I finally have peace of mind. Everything is handled perfectly and I always get quick answers to my questions.",
   "3": "Professional and reliable. The quarterly reports are clear and give me good insight into my financial situation. Highly recommended!",
   "4": "Switching to DRFA was the best choice for my webshop. Moneybird was set up together and I can now see exactly how my business is doing.",

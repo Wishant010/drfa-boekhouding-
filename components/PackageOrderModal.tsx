@@ -26,9 +26,22 @@ interface PackageOrderModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
   packageName: string;
+  // Optionele teksten voor niet-pakket aanvragen (bijv. aangifte inkomstenbelasting)
+  titlePrefix?: string;
+  titleSuffix?: string;
+  waRequestLine?: string;
+  waDirectMessage?: string;
 }
 
-export function PackageOrderModal({ open, onOpenChange, packageName }: PackageOrderModalProps) {
+export function PackageOrderModal({
+  open,
+  onOpenChange,
+  packageName,
+  titlePrefix,
+  titleSuffix,
+  waRequestLine,
+  waDirectMessage,
+}: PackageOrderModalProps) {
   const t = useT();
   const { toast } = useToast();
   const o = t.packages.order;
@@ -66,7 +79,7 @@ export function PackageOrderModal({ open, onOpenChange, packageName }: PackageOr
 
     // Aanvraag als WhatsApp-bericht met alle ingevulde gegevens
     const lines = [
-      o.waRequestLine.replace("{package}", packageName),
+      (waRequestLine ?? o.waRequestLine).replace("{package}", packageName),
       "",
       `${o.waName}: ${name.trim()}`,
       `${o.waPhone}: ${phone.trim()}`,
@@ -80,21 +93,24 @@ export function PackageOrderModal({ open, onOpenChange, packageName }: PackageOr
     resetAndClose();
   };
 
-  const directMessage = o.waDirectMessage.replace("{package}", packageName);
+  const directMessage = (waDirectMessage ?? o.waDirectMessage).replace(
+    "{package}",
+    packageName
+  );
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-h-[92vh] w-[calc(100vw-2rem)] max-w-[460px] overflow-y-auto rounded-[24px] border-0 p-7 shadow-[0_30px_80px_rgba(8,42,91,0.30)] sm:p-8">
         <DialogHeader>
           <DialogTitle className="text-[24px] font-extrabold tracking-[-0.02em] text-[#102A4A]">
-            {o.titlePrefix}{" "}
+            {(titlePrefix ?? o.titlePrefix) && `${titlePrefix ?? o.titlePrefix} `}
             <span
               className="bg-clip-text text-transparent"
               style={{ backgroundImage: "linear-gradient(90deg, #249BF3 0%, #25CBB2 100%)" }}
             >
               {packageName}
             </span>{" "}
-            {o.titleSuffix}
+            {titleSuffix ?? o.titleSuffix}
           </DialogTitle>
           <DialogDescription className="text-[14.5px] leading-relaxed text-[#65778A]">
             {o.subtitle}

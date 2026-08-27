@@ -19,6 +19,7 @@ interface PricingCardProps {
   badge?: string;
   icon: LucideIcon;
   choosePrefix: string;
+  exVat: string;
   onChoose: () => void;
 }
 
@@ -32,6 +33,7 @@ function PricingCard({
   badge,
   icon,
   choosePrefix,
+  exVat,
   onChoose,
 }: PricingCardProps) {
   const Icon = icon ?? Rocket;
@@ -39,14 +41,14 @@ function PricingCard({
   return (
     <div
       className={cn(
-        "group relative mx-auto w-full max-w-[430px] md:max-w-none",
-        // Compleet als eerste op mobiel, gewoon in het midden op desktop
-        highlighted && "order-first md:order-none z-10"
+        "group relative mx-auto w-full max-w-[430px] lg:max-w-none",
+        // Compleet als eerste op mobiel/tablet, gewoon in het midden op desktop
+        highlighted && "order-first lg:order-none z-10"
       )}
     >
       {/* Badge */}
       {badge && (
-        <div className="absolute -top-4 left-1/2 z-20 -translate-x-1/2 md:-translate-y-7">
+        <div className="absolute -top-4 left-1/2 z-20 -translate-x-1/2 lg:-translate-y-7">
           <span
             className="inline-flex items-center rounded-full px-[17px] py-2 text-[11px] font-extrabold uppercase tracking-[0.04em] text-white"
             style={{
@@ -62,14 +64,14 @@ function PricingCard({
       {/* Card */}
       <div
         className={cn(
-          "relative flex h-full flex-col overflow-hidden rounded-[28px] px-6 py-7 text-center md:min-h-[580px] md:px-9 md:py-9",
+          "relative flex h-full flex-col overflow-hidden rounded-[28px] px-6 py-7 text-center lg:min-h-[560px] lg:px-7 lg:py-9 xl:px-9",
           highlighted
             ? cn(
                 // Compleet: eigen achtergrondkleur (mint/teal) en steekt duidelijk boven de rest uit
                 "border-[1.5px] border-[#20B99B]",
                 "bg-gradient-to-b from-[#EDFBF6] to-[#DDF5EC]",
                 "shadow-[0_28px_70px_rgba(17,135,112,0.20),0_6px_18px_rgba(17,135,112,0.08)]",
-                "md:-translate-y-7 md:scale-[1.03]"
+                "lg:-translate-y-7 lg:scale-[1.03]"
               )
             : cn(
                 "border border-[#14375A]/[0.07] bg-white",
@@ -144,6 +146,7 @@ function PricingCard({
             €{price}
           </div>
           <div className="mt-[5px] text-sm font-semibold text-[#738196]">{period}</div>
+          <div className="mt-[2px] text-[12px] text-[#8A97A9]">{exVat}</div>
 
           {/* Features */}
           <ul className="mt-8 space-y-3.5 text-left">
@@ -197,13 +200,14 @@ export function PricingCards() {
 
   return (
     <>
-      <div className="grid items-stretch gap-6 md:grid-cols-3 lg:gap-7">
+      <div className="grid items-stretch gap-6 lg:grid-cols-3 lg:gap-7">
         {t.packages.items.map((pkg, index) => (
           <PricingCard
             key={pkg.name}
             {...pkg}
             icon={PACKAGE_ICONS[index] ?? Rocket}
             choosePrefix={t.packages.choosePrefix}
+            exVat={t.packages.exVat}
             onChoose={() => setOrderPackage(pkg.name)}
           />
         ))}

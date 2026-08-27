@@ -268,7 +268,7 @@ export function HeroSection() {
   return (
     <>
       <section className="relative min-h-[560px] overflow-hidden bg-[#0F2F4F] md:min-h-[800px]">
-        {/* Achtergrondfoto: laptop, jaarrekening, calculator rechts in beeld */}
+        {/* Achtergrondfoto: laptop, administratie-overzicht, calculator rechts in beeld */}
         <Image
           src="/4533a709-6886-4af7-accd-7f16fe6b8b67.png"
           alt=""

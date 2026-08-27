@@ -50,11 +50,15 @@ export function ContactSection() {
                 <dl className="space-y-2 text-sm">
                   <div className="flex justify-between">
                     <dt className="text-muted-foreground">{t.contact.companyNameLabel}</dt>
-                    <dd>{t.header.companyFull}</dd>
+                    <dd>{CONTACT.companyName}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt className="text-muted-foreground">{t.contact.kvkLabel}</dt>
                     <dd>{CONTACT.kvk}</dd>
+                  </div>
+                  <div className="flex justify-between">
+                    <dt className="text-muted-foreground">{t.contact.btwLabel}</dt>
+                    <dd>{CONTACT.btw}</dd>
                   </div>
                   <div className="flex justify-between">
                     <dt className="text-muted-foreground">{t.contact.addressLabel}</dt>

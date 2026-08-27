@@ -38,7 +38,7 @@ function getDefaultReviews(): Review[] {
       id: "1",
       name: "Peter van den Berg",
       rating: 5,
-      text: "Eindelijk een administratiekantoor dat begrijpt wat ik nodig heb als zzp'er. Denny neemt de tijd om alles uit te leggen en denkt echt mee. Top service!",
+      text: "Eindelijk een administratiekantoor dat begrijpt wat ik nodig heb als zzp'er. Dinesh neemt de tijd om alles uit te leggen en denkt echt mee. Top service!",
       date: "2024-11-15",
       status: "approved",
       photo: "https://randomuser.me/api/portraits/men/32.jpg",

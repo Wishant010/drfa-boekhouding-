@@ -1,6 +1,7 @@
 "use client";
 
 import { PricingCards } from "@/components/PricingCards";
+import { PrivateTaxCards } from "@/components/PrivateTaxCards";
 import { useT } from "@/lib/i18n";
 
 export function PackagesSection() {
@@ -35,6 +36,9 @@ export function PackagesSection() {
         </div>
 
         <PricingCards />
+
+        {/* Aangifte inkomstenbelasting voor particulieren */}
+        <PrivateTaxCards />
       </div>
 
       {/* Bottom edge - curve on the left like Hero */}

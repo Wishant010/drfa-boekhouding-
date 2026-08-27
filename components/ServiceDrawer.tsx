@@ -92,7 +92,7 @@ const SERVICE_DETAILS: Record<ServiceKey, ServiceDetail> = {
     listTitle: "Wat we voor je regelen",
     items: [
       "Jaarafsluiting van je administratie",
-      "Jaarrekening of financieel jaaroverzicht",
+      "Financieel jaaroverzicht",
       "Winst- en verliesrekening",
       "Balans",
       "Aangifte inkomstenbelasting",

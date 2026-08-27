@@ -4,9 +4,9 @@ import { CONTACT, SOCIALS, SITE_URL } from "@/lib/constants";
 import "@/app/globals.css";
 
 const SITE_NAME = "Administratiekantoor DRFA";
-const SITE_TITLE = "Administratiekantoor DRFA | Boekhouding voor zzp'ers in Haarlem";
+const SITE_TITLE = "Administratiekantoor DRFA | Boekhouding voor zzp'ers in Spijkenisse";
 const SITE_DESCRIPTION =
-  "DRFA regelt je boekhouding, BTW-aangifte en jaarcijfers voor een vaste maandprijs. Persoonlijk contact, binnen 24 uur reactie en online inzicht via Moneybird.";
+  "DRFA regelt je boekhouding, BTW-aangifte en jaarcijfers voor een vaste maandprijs. Ook aangifte inkomstenbelasting voor particulieren. Binnen 24 uur reactie.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -16,14 +16,17 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   keywords: [
-    "administratiekantoor Haarlem",
+    "administratiekantoor Spijkenisse",
     "boekhouder zzp",
-    "boekhouding Haarlem",
+    "boekhouding Spijkenisse",
     "BTW-aangifte",
-    "jaarrekening zzp",
+    "jaarcijfers zzp",
     "Moneybird boekhouder",
     "administratie eenmanszaak",
     "boekhouder vaste prijs",
+    "aangifte inkomstenbelasting particulieren",
+    "belastingaangifte fiscale partner",
+    "M-aangifte migratie",
   ],
   authors: [{ name: SITE_NAME }],
   creator: SITE_NAME,
@@ -43,7 +46,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "DRFA werkplek met jaarrekening en administratie-overzicht",
+        alt: "DRFA werkplek met administratie-overzicht",
       },
     ],
   },
@@ -95,12 +98,18 @@ const organizationSchema = {
   address: {
     "@type": "PostalAddress",
     streetAddress: CONTACT.address,
-    postalCode: "2036 NL",
-    addressLocality: "Haarlem",
+    postalCode: "3207 DE",
+    addressLocality: "Spijkenisse",
     addressCountry: "NL",
   },
+  vatID: CONTACT.btw,
+  identifier: {
+    "@type": "PropertyValue",
+    name: "KVK",
+    value: CONTACT.kvk,
+  },
   areaServed: [
-    { "@type": "City", name: "Haarlem" },
+    { "@type": "City", name: "Spijkenisse" },
     { "@type": "Country", name: "Nederland" },
   ],
   openingHoursSpecification: [
