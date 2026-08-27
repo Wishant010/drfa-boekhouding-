@@ -125,7 +125,7 @@ export const translations = {
           description: "Perfect voor starters met weinig transacties",
           features: [
             "Tot 30 boekingen per maand",
-            "Koppeling boekhoudsoftware",
+            "Koppeling met Moneybird, e-boekhouden.nl of Jortt",
             "Kwartaal-BTW-aangifte",
           ],
           highlighted: false,
@@ -227,10 +227,10 @@ export const translations = {
         },
         {
           number: "02",
-          title: "Moneybird inrichten",
+          title: "Administratie inrichten",
           subtitle: "Alles goed ingesteld",
           detail:
-            "We zorgen samen dat je administratie goed staat en dat DRFA toegang heeft om met je mee te werken.",
+            "We zorgen samen dat je administratie goed staat in Moneybird, e-boekhouden.nl of Jortt, en dat DRFA toegang heeft om met je mee te werken.",
         },
         {
           number: "03",
@@ -434,7 +434,7 @@ export const translations = {
           description: "Perfect for starters with few transactions",
           features: [
             "Up to 30 bookings per month",
-            "Accounting software integration",
+            "Works with Moneybird, e-boekhouden.nl or Jortt",
             "Quarterly VAT returns",
           ],
           highlighted: false,
@@ -515,10 +515,10 @@ export const translations = {
       titleGradient: "start together",
       lead: "In 3 clear steps to an administration that is set up properly and stays accessible online.",
       intro:
-        "We start with a short introduction, then set up your Moneybird administration together and make sure your bookkeeping stays organised from that moment on. You keep online insight, we watch along and help where needed.",
+        "We start with a short introduction and then set up your online administration together, in Moneybird, e-boekhouden.nl, Jortt or another accounting package. You keep online insight, we watch along and help where needed.",
       pills: [
         "Free, no-obligation introduction",
-        "Moneybird set up together",
+        "Moneybird, e-boekhouden.nl or Jortt",
         "Personal contact",
       ],
       ctaPlan: "Schedule a meeting",
@@ -536,10 +536,10 @@ export const translations = {
         },
         {
           number: "02",
-          title: "Setting up Moneybird",
+          title: "Setting up your administration",
           subtitle: "Everything configured properly",
           detail:
-            "Together we make sure your administration is set up correctly and that DRFA has access to work alongside you.",
+            "Together we make sure your administration is set up correctly in Moneybird, e-boekhouden.nl or Jortt, and that DRFA has access to work alongside you.",
         },
         {
           number: "03",

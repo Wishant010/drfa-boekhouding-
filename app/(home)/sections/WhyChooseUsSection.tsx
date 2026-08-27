@@ -43,7 +43,7 @@ function MoneybirdVisual() {
       alt={t.why.imageAlt}
       width={1536}
       height={1024}
-      sizes="(max-width: 1024px) 100vw, 660px"
+      sizes="(max-width: 1024px) 100vw, 720px"
       className="w-full"
     />
   );
@@ -176,7 +176,7 @@ export function WhyChooseUsSection() {
     >
       <div className="mx-auto max-w-[1200px]">
         {/* Bovenste gedeelte: tekst links, Moneybird visual rechts */}
-        <div className="grid items-center gap-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-20">
+        <div className="grid items-center gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-16">
           {/* Links: tekst en CTA's */}
           <div
             className={`transition-all duration-700 ${

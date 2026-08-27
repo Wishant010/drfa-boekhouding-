@@ -50,6 +50,7 @@ const SERVICE_DETAILS: Record<ServiceKey, ServiceDetail> = {
       "Verwerken van inkoop- en verkoopfacturen",
       "Banktransacties verwerken en controleren",
       "Administratie netjes structureren",
+      "Meekijken in jouw boekhoudpakket: Moneybird, e-boekhouden.nl of Jortt",
       "Periodieke controle van je boekhouding",
       "Inzicht in openstaande posten",
       "Vragen over je administratie beantwoorden",
