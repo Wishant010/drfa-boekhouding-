@@ -8,8 +8,19 @@ export function PackagesSection() {
   const t = useT();
 
   return (
-    <section className="relative w-full overflow-hidden py-20 md:py-28
-      bg-gradient-to-b from-[#0B3772] via-[#0A2F66] to-[#082A5B]">
+    <section
+      className="relative w-full overflow-hidden py-20 md:py-28"
+      style={{
+        // Donker navy linksonder dat naar rechts overloopt in royal blue,
+        // met zachte radiale blauwe highlights en een heel subtiele cyaan gloed
+        background: [
+          "radial-gradient(900px 620px at 88% 32%, rgba(13, 76, 207, 0.50), transparent 70%)",
+          "radial-gradient(520px 360px at 72% 12%, rgba(34, 211, 238, 0.08), transparent 70%)",
+          "radial-gradient(640px 420px at 18% 88%, rgba(34, 211, 238, 0.05), transparent 70%)",
+          "linear-gradient(105deg, #061B3A 0%, #0A2F66 55%, #0D4CCF 135%)",
+        ].join(", "),
+      }}
+    >
 
       {/* Top edge - wave coming from white section above */}
       <div className="absolute top-0 left-0 right-0 w-full overflow-hidden z-[1]">
