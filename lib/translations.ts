@@ -167,7 +167,7 @@ export const translations = {
       title: "Aangifte inkomstenbelasting",
       subtitle:
         "Geen ondernemer? Ook dan helpen we je. We verzorgen je jaarlijkse aangifte inkomstenbelasting voor een vast, eenmalig tarief.",
-      period: "eenmalig",
+      period: "eenmalig, excl. btw",
       cta: "Aanvragen",
       note: "Alle tarieven zijn eenmalig, per belastingjaar.",
       orderTitlePrefix: "",
@@ -481,7 +481,7 @@ export const translations = {
       title: "Income tax returns",
       subtitle:
         "Not a business owner? We can still help. We take care of your annual income tax return for a fixed one-off fee.",
-      period: "one-off",
+      period: "one-off, excl. VAT",
       cta: "Request",
       note: "All fees are one-off, per tax year.",
       orderTitlePrefix: "",
