@@ -1,0 +1,57 @@
+- generic [active] [ref=f3e1]:
+  - region "Notifications (F8)":
+    - list
+  - region "Notifications alt+T"
+  - generic [ref=f3e2]:
+    - main [ref=f3e3]:
+      - generic [ref=f3e5]:
+        - heading "404" [level=1] [ref=f3e6]
+        - paragraph [ref=f3e7]: Oops! Pagina niet gevonden
+        - link "Terug naar Home" [ref=f3e8] [cursor=pointer]:
+          - /url: /
+    - contentinfo [ref=f3e9]:
+      - generic [ref=f3e11]:
+        - generic [ref=f3e12]:
+          - generic [ref=f3e13]:
+            - link "DRFA Logo Boekhouder" [ref=f3e14] [cursor=pointer]:
+              - /url: /
+              - img "DRFA Logo" [ref=f3e15]
+              - generic [ref=f3e16]: Boekhouder
+            - paragraph [ref=f3e17]: Wij nemen de administratie uit handen van zzp'ers en kleine ondernemers. Persoonlijk contact, heldere taal en een vaste prijs per maand, zodat jij je kunt richten op ondernemen.
+            - link "WhatsApp" [ref=f3e19] [cursor=pointer]:
+              - /url: https://wa.me/31640772472?text=Hallo!%20Ik%20heb%20een%20vraag%20over%20jullie%20diensten.
+          - generic [ref=f3e22]:
+            - heading "Navigatie" [level=4] [ref=f3e23]
+            - list [ref=f3e24]:
+              - listitem [ref=f3e25]:
+                - link "Home" [ref=f3e26] [cursor=pointer]:
+                  - /url: "#top"
+              - listitem [ref=f3e27]:
+                - link "Pakketten" [ref=f3e28] [cursor=pointer]:
+                  - /url: "#pakketten"
+              - listitem [ref=f3e29]:
+                - link "Over ons" [ref=f3e30] [cursor=pointer]:
+                  - /url: "#over-ons"
+              - listitem [ref=f3e31]:
+                - link "Reviews" [ref=f3e32] [cursor=pointer]:
+                  - /url: "#reviews"
+              - listitem [ref=f3e33]:
+                - link "Contact" [ref=f3e34] [cursor=pointer]:
+                  - /url: "#contact"
+          - generic [ref=f3e35]:
+            - heading "Contact" [level=4] [ref=f3e36]
+            - list [ref=f3e37]:
+              - listitem [ref=f3e38]:
+                - link "06-40772472" [ref=f3e39] [cursor=pointer]:
+                  - /url: tel:+31 6 40772472
+              - listitem [ref=f3e42]:
+                - link "info@drfa.nl" [ref=f3e43] [cursor=pointer]:
+                  - /url: mailto:info@drfa.nl
+              - listitem [ref=f3e47]:
+                - generic [ref=f3e51]: Mina Krusemanstraat 343207 DE Spijkenisse
+        - generic [ref=f3e52]:
+          - paragraph [ref=f3e53]: © 2026 Boekhouder DRFA. Alle rechten voorbehouden.
+          - paragraph [ref=f3e54]: KVK 88931102 · BTW NL004095208B97, Spijkenisse
+    - link "Chat via WhatsApp" [ref=f3e55] [cursor=pointer]:
+      - /url: https://wa.me/31640772472?text=Hallo!%20Ik%20heb%20een%20vraag%20over%20jullie%20diensten.
+  - alert [ref=f3e58]

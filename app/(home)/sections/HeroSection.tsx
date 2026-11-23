@@ -97,7 +97,7 @@ function HeroHeader() {
           <LanguageToggle variant="dark" />
           <Link
             href="#pakketten"
-            className="whitespace-nowrap rounded-full border border-white/35 px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:border-white hover:bg-white/10 xl:px-6"
+            className="whitespace-nowrap rounded-full border border-white/70 bg-[#0B3772]/65 px-4 py-2.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:border-white hover:bg-[#0B3772]/85 xl:px-6"
           >
             {t.header.viewPackages}
           </Link>
@@ -105,8 +105,8 @@ function HeroHeader() {
             href="#contact"
             className="whitespace-nowrap rounded-full px-4 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-105 xl:px-6"
             style={{
-              background: "linear-gradient(90deg, #29A8FF 0%, #27D3B2 100%)",
-              boxShadow: "0 10px 30px rgba(26, 133, 220, 0.22)",
+              background: "linear-gradient(90deg, #1557B8 0%, #2F7BE8 100%)",
+              boxShadow: "0 10px 30px rgba(21, 87, 184, 0.35)",
             }}
           >
             {t.header.requestQuote}
@@ -164,7 +164,7 @@ function HeroHeader() {
                 onClick={() => setMobileMenuOpen(false)}
                 className="block w-full rounded-full py-4 text-center text-lg font-semibold text-white shadow-lg"
                 style={{
-                  background: "linear-gradient(90deg, #29A8FF 0%, #27D3B2 100%)",
+                  background: "linear-gradient(90deg, #1557B8 0%, #2F7BE8 100%)",
                 }}
               >
                 {t.header.requestQuote}
@@ -237,7 +237,7 @@ function BenefitCards() {
                   <div
                     className="mx-auto mb-4 flex h-[52px] w-[52px] items-center justify-center rounded-full text-white"
                     style={{
-                      background: "linear-gradient(135deg, #29AAFF, #27D5B1)",
+                      background: "linear-gradient(135deg, #0B3772, #1557B8)",
                     }}
                   >
                     <Icon className="h-6 w-6" aria-hidden="true" strokeWidth={2} />
@@ -324,17 +324,29 @@ export function HeroSection() {
               <br className="hidden sm:block" />{" "}
               <SplitText {...HERO_SPLIT_PROPS} text={t.hero.h1Line2} />
               <br className="hidden sm:block" />{" "}
-              <SplitText
-                {...HERO_SPLIT_PROPS}
-                text={t.hero.h1Grad2}
-                className="hero-grad"
-              />
-              {t.hero.h1End.trim() && (
-                <>
-                  {" "}
-                  <SplitText {...HERO_SPLIT_PROPS} text={t.hero.h1End.trim()} />
-                </>
-              )}
+              {/* Laatste regel met een blauwe veeg eronder */}
+              <span className="relative inline-block">
+                <SplitText {...HERO_SPLIT_PROPS} text={t.hero.h1Grad2} />
+                {t.hero.h1End.trim() && (
+                  <>
+                    {" "}
+                    <SplitText {...HERO_SPLIT_PROPS} text={t.hero.h1End.trim()} />
+                  </>
+                )}
+                <svg
+                  viewBox="0 0 200 20"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                  className="animate-fade-in-up pointer-events-none absolute left-[20%] top-[92%] h-[0.5em] w-[84%]"
+                  style={{ animationDelay: "0.9s", animationFillMode: "both" }}
+                >
+                  {/* Gevulde, taps toelopende veeg: dik in het midden, dun aan de uiteinden */}
+                  <path
+                    d="M2 19 C 45 2, 140 -5, 198 7 C 145 5, 60 12, 2 19 Z"
+                    fill="#5aa7ff"
+                  />
+                </svg>
+              </span>
             </h1>
 
             {/* Subtekst */}
@@ -354,8 +366,8 @@ export function HeroSection() {
                 href="#contact"
                 className="group inline-flex h-[56px] items-center justify-center gap-2 self-start rounded-full px-7 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-105"
                 style={{
-                  background: "linear-gradient(90deg, #29A8FF 0%, #27D3B2 100%)",
-                  boxShadow: "0 10px 30px rgba(26, 133, 220, 0.22)",
+                  background: "linear-gradient(90deg, #1557B8 0%, #2F7BE8 100%)",
+                  boxShadow: "0 10px 30px rgba(21, 87, 184, 0.35)",
                 }}
               >
                 {t.header.requestQuote}

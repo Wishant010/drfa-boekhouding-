@@ -63,7 +63,7 @@ export function AboutPreviewSection() {
           >
             {/* Badge */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#DCEAF5] bg-[#F4FAFE] px-4 py-2 text-[12px] font-bold uppercase tracking-[0.16em] text-[#17456C]">
-              <span className="h-[7px] w-[7px] rounded-full bg-gradient-to-r from-[#249BF4] to-[#22CDAE]" />
+              <span className="h-[7px] w-[7px] rounded-full bg-gradient-to-r from-[#0B3772] to-[#1557B8]" />
               {t.about.badge}
             </div>
 
@@ -73,7 +73,7 @@ export function AboutPreviewSection() {
               <br />
               <span
                 className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(90deg, #249BF3 0%, #25CBB2 100%)" }}
+                style={{ backgroundImage: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)" }}
               >
                 {t.about.title2}
               </span>
@@ -121,8 +121,8 @@ export function AboutPreviewSection() {
                 href="#aanpak"
                 className="group inline-flex h-[54px] items-center gap-2 rounded-full px-7 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-105"
                 style={{
-                  background: "linear-gradient(90deg, #29A8FF 0%, #27D3B2 100%)",
-                  boxShadow: "0 10px 30px rgba(26, 133, 220, 0.22)",
+                  background: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)",
+                  boxShadow: "0 10px 30px rgba(11, 55, 114, 0.28)",
                 }}
               >
                 {t.about.cta}

@@ -20,8 +20,8 @@ export function CTASection() {
           style={{ boxShadow: "0 20px 55px rgba(31, 58, 88, 0.08), 0 4px 14px rgba(31, 58, 88, 0.04)" }}
         >
           {/* Subtiele accenten in de hoeken */}
-          <div className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-gradient-to-br from-sky-100/70 to-emerald-100/50 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-gradient-to-br from-emerald-100/60 to-sky-100/50 blur-3xl" />
+          <div className="pointer-events-none absolute -top-20 -right-20 h-56 w-56 rounded-full bg-gradient-to-br from-sky-100/70 to-blue-100/50 blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-gradient-to-br from-blue-100/60 to-sky-100/50 blur-3xl" />
 
           <div className="relative">
             <h2 className="mb-4 text-3xl font-bold text-[#102A4A] md:text-4xl">
@@ -35,8 +35,8 @@ export function CTASection() {
                 href="#contact"
                 className="group inline-flex h-[54px] items-center justify-center gap-2 rounded-full px-8 text-base font-semibold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-105"
                 style={{
-                  background: "linear-gradient(90deg, #29A8FF 0%, #27D3B2 100%)",
-                  boxShadow: "0 10px 30px rgba(26, 133, 220, 0.22)",
+                  background: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)",
+                  boxShadow: "0 10px 30px rgba(11, 55, 114, 0.28)",
                 }}
               >
                 Neem contact op
@@ -46,7 +46,7 @@ export function CTASection() {
                 href={SOCIALS.whatsappUrl("Hallo! Ik wil graag kennismaken.")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex h-[54px] items-center justify-center gap-2 rounded-full border-[1.5px] border-[#BFD2E2] bg-white px-8 text-base font-semibold text-[#174A6D] transition-all duration-300 hover:border-[#249BF4] hover:bg-sky-50/50"
+                className="group inline-flex h-[54px] items-center justify-center gap-2 rounded-full border-[1.5px] border-[#BFD2E2] bg-white px-8 text-base font-semibold text-[#174A6D] transition-all duration-300 hover:border-[#0B3772] hover:bg-sky-50/50"
               >
                 <WhatsAppIcon className="h-5 w-5 transition-transform group-hover:scale-110" />
                 WhatsApp ons

@@ -106,7 +106,7 @@ export function PackageOrderModal({
             {(titlePrefix ?? o.titlePrefix) && `${titlePrefix ?? o.titlePrefix} `}
             <span
               className="bg-clip-text text-transparent"
-              style={{ backgroundImage: "linear-gradient(90deg, #249BF3 0%, #25CBB2 100%)" }}
+              style={{ backgroundImage: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)" }}
             >
               {packageName}
             </span>{" "}
@@ -184,8 +184,8 @@ export function PackageOrderModal({
             disabled={isSubmitting}
             className="flex h-[52px] w-full items-center justify-center gap-2 rounded-[16px] text-[15px] font-bold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-105 disabled:opacity-60"
             style={{
-              background: "linear-gradient(90deg, #208BF4 0%, #20CFAE 100%)",
-              boxShadow: "0 10px 26px rgba(31, 158, 203, 0.22)",
+              background: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)",
+              boxShadow: "0 10px 26px rgba(11, 55, 114, 0.28)",
             }}
           >
             <Send className="h-[17px] w-[17px]" aria-hidden="true" />

@@ -193,7 +193,7 @@ export function ServiceDrawer({ service, onClose }: ServiceDrawerProps) {
                     className="flex h-[54px] w-[54px] items-center justify-center rounded-2xl"
                     style={{ background: "linear-gradient(135deg, #E9F5FF, #E8FBF7)" }}
                   >
-                    <Icon className="h-6 w-6 text-[#289FF4]" aria-hidden="true" />
+                    <Icon className="h-6 w-6 text-[#0B3772]" aria-hidden="true" />
                   </div>
                   <p className="mt-4 text-[12px] font-bold uppercase tracking-[0.16em] text-[#2685E8]">
                     Dienst
@@ -243,7 +243,7 @@ export function ServiceDrawer({ service, onClose }: ServiceDrawerProps) {
                 className="mt-7 flex items-center gap-3 rounded-[18px] border border-[#2D96DC]/[0.08] px-5 py-[18px]"
                 style={{ background: "linear-gradient(135deg, #F1F8FF, #F0FCF8)" }}
               >
-                <Sparkles className="h-5 w-5 shrink-0 text-[#25CDB2]" aria-hidden="true" />
+                <Sparkles className="h-5 w-5 shrink-0 text-[#1557B8]" aria-hidden="true" />
                 <p className="text-[15px] font-semibold text-[#12385E]">{detail.highlight}</p>
               </div>
 
@@ -257,8 +257,8 @@ export function ServiceDrawer({ service, onClose }: ServiceDrawerProps) {
                   onClick={() => closeAndScrollTo(detail.primaryCta.target)}
                   className="group mt-4 inline-flex h-[54px] w-full items-center justify-center gap-2 rounded-[14px] text-base font-semibold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-105 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#289FF4] focus-visible:ring-offset-2"
                   style={{
-                    background: "linear-gradient(90deg, #28A7F4, #24CFAC)",
-                    boxShadow: "0 10px 26px rgba(36, 159, 214, 0.18)",
+                    background: "linear-gradient(90deg, #0B3772, #1557B8)",
+                    boxShadow: "0 10px 26px rgba(11, 55, 114, 0.25)",
                   }}
                 >
                   {detail.primaryCta.label}

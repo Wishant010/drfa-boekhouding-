@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, Phone, Mail, MapPin, ChevronRight } from "lucide-react";
+import { Menu, X, Phone, Mail, MapPin, ChevronRight, ArrowRight, ArrowUp, Clock3 } from "lucide-react";
 import { CONTACT, SOCIALS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { useT } from "@/lib/i18n";
@@ -82,7 +82,7 @@ export function Header() {
               >
                 {item.label}
                 {pathname === item.href && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-400 to-emerald-400 rounded-full" />
+                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-[#0B3772] to-[#1557B8] rounded-full" />
                 )}
               </Link>
             ))}
@@ -99,7 +99,7 @@ export function Header() {
             </Link>
             <Link
               href="#contact"
-              className="rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-emerald-400 px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:from-sky-300 hover:via-blue-400 hover:to-emerald-300 hover:shadow-lg"
+              className="rounded-full bg-gradient-to-r from-[#0B3772] via-[#104A9C] to-[#1557B8] px-5 py-2.5 text-sm font-semibold text-white shadow-md transition-all hover:from-[#0D4186] hover:via-[#1354AE] hover:to-[#1A63CC] hover:shadow-lg"
             >
               {t.header.requestQuote}
             </Link>
@@ -158,7 +158,7 @@ export function Header() {
               <Link
                 href="#contact"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block w-full rounded-full bg-gradient-to-r from-sky-400 via-blue-500 to-emerald-400 py-4 text-center text-lg font-semibold text-white shadow-lg"
+                className="block w-full rounded-full bg-gradient-to-r from-[#0B3772] via-[#104A9C] to-[#1557B8] py-4 text-center text-lg font-semibold text-white shadow-lg"
               >
                 {t.header.requestQuote}
               </Link>
@@ -192,15 +192,63 @@ export function Footer() {
     { label: t.nav.contact, href: "#contact" },
   ];
 
-  return (
-    <footer className="relative bg-[#08234A]">
-      {/* Subtiele accentlijn bovenaan */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-sky-400/50 to-transparent" />
+  const headingClass =
+    "mb-5 text-[13px] font-semibold uppercase tracking-[0.14em] text-white";
+  const iconTileClass =
+    "flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-white/[0.06] text-white/80 transition-colors group-hover:border-white/25 group-hover:bg-white/[0.12] group-hover:text-white";
 
-      <div className="container py-16 md:py-20">
-        <div className="grid gap-12 md:grid-cols-12 md:gap-8">
+  return (
+    <footer className="relative overflow-hidden bg-[#08234A]">
+      {/* Subtiele accentlijn bovenaan */}
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+      {/* Zachte blauwe gloed voor wat diepte, zelfde kleurfamilie als de achtergrond */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(700px 380px at 85% 0%, rgba(47,123,232,0.16), transparent 70%), radial-gradient(520px 320px at 5% 100%, rgba(21,87,184,0.14), transparent 70%)",
+        }}
+      />
+
+      <div className="container relative py-14 md:py-16">
+        {/* Afsluitende oproep */}
+        <div className="flex flex-col gap-6 rounded-[24px] border border-white/10 bg-white/[0.05] p-7 md:flex-row md:items-center md:justify-between md:p-9">
+          <div className="max-w-xl">
+            <h3 className="text-[22px] font-bold leading-snug tracking-[-0.01em] text-white md:text-[26px]">
+              {t.footer.ctaTitle}
+            </h3>
+            <p className="mt-2 text-[15px] leading-relaxed text-slate-300">
+              {t.footer.ctaText}
+            </p>
+          </div>
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row">
+            <Link
+              href="#contact"
+              className="group inline-flex h-12 items-center justify-center gap-2 rounded-full px-6 text-[15px] font-semibold text-white transition-all duration-300 hover:-translate-y-[1px] hover:brightness-110"
+              style={{ background: "linear-gradient(90deg, #1557B8 0%, #2F7BE8 100%)" }}
+            >
+              {t.header.requestQuote}
+              <ArrowRight
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
+            <a
+              href={SOCIALS.whatsappUrl(t.whatsapp.defaultMessage)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/30 px-6 text-[15px] font-semibold text-white transition-colors duration-300 hover:border-white/70 hover:bg-white/10"
+            >
+              <WhatsAppIcon className="h-[18px] w-[18px]" />
+              {t.footer.whatsappCta}
+            </a>
+          </div>
+        </div>
+
+        <div className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
           {/* Merk */}
-          <div className="md:col-span-5">
+          <div className="sm:col-span-2 lg:col-span-4 lg:pr-6">
             <Link href="/" className="inline-flex items-center gap-3">
               <Image
                 src="/logo.png"
@@ -216,31 +264,22 @@ export function Footer() {
             <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-slate-300">
               {t.footer.description}
             </p>
-            <div className="mt-6 flex gap-3">
-              <a
-                href={SOCIALS.whatsappUrl(t.whatsapp.defaultMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-slate-300 transition-all duration-200 hover:border-emerald-400/60 hover:bg-white/10 hover:text-white"
-                aria-label="WhatsApp"
-              >
-                <WhatsAppIcon className="h-[18px] w-[18px]" />
-              </a>
-            </div>
           </div>
 
           {/* Navigatie */}
-          <div className="md:col-span-3 md:col-start-7">
-            <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-sky-300">
-              {t.footer.navTitle}
-            </h4>
+          <div className="lg:col-span-2">
+            <h4 className={headingClass}>{t.footer.navTitle}</h4>
             <ul className="space-y-3">
               {navItems.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-[15px] text-slate-300 transition-colors hover:text-white"
+                    className="group inline-flex items-center gap-1.5 text-[15px] text-slate-300 transition-colors hover:text-white"
                   >
+                    <ChevronRight
+                      className="h-3.5 w-3.5 text-white/35 transition-all duration-200 group-hover:translate-x-0.5 group-hover:text-white"
+                      aria-hidden="true"
+                    />
                     {item.label}
                   </Link>
                 </li>
@@ -249,17 +288,17 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="md:col-span-3">
-            <h4 className="mb-5 text-sm font-semibold uppercase tracking-wider text-sky-300">
-              {t.footer.contactTitle}
-            </h4>
-            <ul className="space-y-4 text-[15px]">
+          <div className="lg:col-span-3">
+            <h4 className={headingClass}>{t.footer.contactTitle}</h4>
+            <ul className="space-y-3.5 text-[15px]">
               <li>
                 <a
                   href={`tel:${CONTACT.phone}`}
                   className="group flex items-center gap-3 text-slate-300 transition-colors hover:text-white"
                 >
-                  <Phone className="h-4 w-4 shrink-0 text-sky-300/80" />
+                  <span className={iconTileClass}>
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                  </span>
                   {CONTACT.phoneDisplay}
                 </a>
               </li>
@@ -268,12 +307,16 @@ export function Footer() {
                   href={`mailto:${CONTACT.email}`}
                   className="group flex items-center gap-3 text-slate-300 transition-colors hover:text-white"
                 >
-                  <Mail className="h-4 w-4 shrink-0 text-sky-300/80" />
+                  <span className={iconTileClass}>
+                    <Mail className="h-4 w-4" aria-hidden="true" />
+                  </span>
                   {CONTACT.email}
                 </a>
               </li>
-              <li className="flex items-start gap-3 text-slate-300">
-                <MapPin className="mt-1 h-4 w-4 shrink-0 text-sky-300/80" />
+              <li className="group flex items-start gap-3 text-slate-300">
+                <span className={iconTileClass}>
+                  <MapPin className="h-4 w-4" aria-hidden="true" />
+                </span>
                 <span className="min-w-0 [overflow-wrap:anywhere]">
                   {CONTACT.address}
                   <br />
@@ -282,12 +325,39 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Bereikbaarheid */}
+          <div className="lg:col-span-3">
+            <h4 className={headingClass}>{t.contact.availability}</h4>
+            <dl className="space-y-3 text-[15px] text-slate-300">
+              <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-3">
+                <dt className="flex items-center gap-2">
+                  <Clock3 className="h-4 w-4 text-white/60" aria-hidden="true" />
+                  {t.contact.monFri}
+                </dt>
+                <dd className="font-medium text-white">{t.footer.hoursValue}</dd>
+              </div>
+              <div className="flex items-center justify-between gap-4">
+                <dt className="pl-6">{t.contact.weekend}</dt>
+                <dd>{t.contact.closed}</dd>
+              </div>
+            </dl>
+          </div>
         </div>
 
         {/* Onderste balk */}
-        <div className="mt-14 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-8 text-sm text-slate-400 md:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-7 text-sm text-slate-400 md:flex-row">
           <p>© {currentYear} {t.header.companyFull}. {t.footer.rights}.</p>
           <p>KVK {CONTACT.kvk} · BTW {CONTACT.btw}, Spijkenisse</p>
+          <a
+            href="#top"
+            className="group inline-flex items-center gap-2 text-slate-300 transition-colors hover:text-white"
+          >
+            {t.footer.backToTop}
+            <span className="flex h-8 w-8 items-center justify-center rounded-full border border-white/15 transition-colors group-hover:border-white/50 group-hover:bg-white/10">
+              <ArrowUp className="h-4 w-4" aria-hidden="true" />
+            </span>
+          </a>
         </div>
       </div>
     </footer>

@@ -178,8 +178,8 @@ function PricingCard({
               style={
                 highlighted
                   ? {
-                      background: "linear-gradient(90deg, #208BF4 0%, #20CFAE 100%)",
-                      boxShadow: "0 10px 26px rgba(31, 158, 203, 0.22)",
+                      background: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)",
+                      boxShadow: "0 10px 26px rgba(11, 55, 114, 0.28)",
                     }
                   : undefined
               }

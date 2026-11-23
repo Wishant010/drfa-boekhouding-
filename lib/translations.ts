@@ -305,6 +305,11 @@ export const translations = {
       navTitle: "Navigatie",
       contactTitle: "Contact",
       rights: "Alle rechten voorbehouden",
+      ctaTitle: "Klaar om je administratie uit handen te geven?",
+      ctaText: "Plan een gratis kennismaking. Je hoort binnen 24 uur van ons.",
+      whatsappCta: "Stuur een WhatsApp",
+      hoursValue: "9:00 - 17:00",
+      backToTop: "Naar boven",
     },
     whatsapp: {
       defaultMessage: "Hallo! Ik heb een vraag over jullie diensten.",
@@ -613,6 +618,11 @@ export const translations = {
       navTitle: "Navigation",
       contactTitle: "Contact",
       rights: "All rights reserved",
+      ctaTitle: "Ready to hand over your administration?",
+      ctaText: "Book a free intro call. You will hear from us within 24 hours.",
+      whatsappCta: "Send a WhatsApp",
+      hoursValue: "9:00 - 17:00",
+      backToTop: "Back to top",
     },
     whatsapp: {
       defaultMessage: "Hello! I have a question about your services.",

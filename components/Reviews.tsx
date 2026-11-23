@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Star, Send, User, Quote } from "lucide-react";
+import { Star, Send, Quote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -41,25 +41,22 @@ function getDefaultReviews(): Review[] {
       text: "Eindelijk een administratiekantoor dat begrijpt wat ik nodig heb als zzp'er. Dinesh neemt de tijd om alles uit te leggen en denkt echt mee. Top service!",
       date: "2024-11-15",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       id: "2",
-      name: "Sandra Jansen",
+      name: "Priya Ramautar",
       rating: 5,
       text: "Na jaren van stress over mijn boekhouding heb ik nu rust. Alles wordt perfect afgehandeld en ik krijg altijd snel antwoord op mijn vragen.",
       date: "2024-10-28",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/women/44.jpg",
     },
     {
       id: "3",
-      name: "Mike de Vries",
+      name: "Youssef Bennani",
       rating: 4,
       text: "Professioneel en betrouwbaar. De kwartaalrapportages zijn helder en geven mij goed inzicht in mijn financiële situatie. Aanrader!",
       date: "2024-10-10",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/men/22.jpg",
     },
     {
       id: "4",
@@ -68,16 +65,14 @@ function getDefaultReviews(): Review[] {
       text: "De overstap naar DRFA was de beste keuze voor mijn webshop. Moneybird is samen ingericht en ik zie nu precies hoe mijn zaak ervoor staat.",
       date: "2025-02-18",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
       id: "5",
-      name: "Johan Vermeer",
+      name: "Rajesh Bhagwandin",
       rating: 5,
       text: "Mijn BTW-aangifte is altijd op tijd en klopt gewoon. Geen verrassingen achteraf, en de vaste maandprijs maakt het lekker overzichtelijk.",
       date: "2025-04-02",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/men/41.jpg",
     },
     {
       id: "6",
@@ -86,16 +81,14 @@ function getDefaultReviews(): Review[] {
       text: "Heldere communicatie en altijd dezelfde adviseur. Ik kan met elke vraag terecht en krijg antwoord in normale taal, zonder ingewikkelde termen.",
       date: "2025-06-11",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/women/68.jpg",
     },
     {
       id: "7",
-      name: "Tom Hendriks",
+      name: "Jermaine Martina",
       rating: 4,
       text: "Snel bereikbaar via WhatsApp en mijn jaarcijfers waren ruim op tijd klaar. Fijn dat er echt met je wordt meegedacht als ondernemer.",
       date: "2025-09-27",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/men/76.jpg",
     },
     {
       id: "8",
@@ -104,7 +97,6 @@ function getDefaultReviews(): Review[] {
       text: "Als startende zzp'er zag ik op tegen de administratie. DRFA heeft alles ingericht en legt stap voor stap uit hoe het werkt. Een enorme opluchting!",
       date: "2026-01-14",
       status: "approved",
-      photo: "https://randomuser.me/api/portraits/women/24.jpg",
     },
   ];
 }
@@ -165,29 +157,26 @@ export function StarRating({
   );
 }
 
-// Profielfoto met fallback-icoon als de foto niet laadt
+// Avatar met initialen: bewust geen profielfoto's bij reviews
+function getInitials(name: string) {
+  const parts = name.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "?";
+  const first = parts[0][0];
+  const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
+  return (first + last).toUpperCase();
+}
+
 function ReviewAvatar({ review, className }: { review: Review; className?: string }) {
-  const [failed, setFailed] = useState(false);
-
-  if (!review.photo || failed) {
-    return (
-      <div className={cn("flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary", className)}>
-        <User className="h-5 w-5 text-primary" />
-      </div>
-    );
-  }
-
   return (
-    // eslint-disable-next-line @next/next/no-img-element
-    <img
-      src={review.photo}
-      alt={`Profielfoto van ${review.name}`}
-      width={44}
-      height={44}
-      loading="lazy"
-      onError={() => setFailed(true)}
-      className={cn("h-11 w-11 shrink-0 rounded-full object-cover ring-2 ring-white shadow-sm", className)}
-    />
+    <div
+      aria-hidden="true"
+      className={cn(
+        "flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-secondary text-sm font-bold tracking-wide text-primary",
+        className
+      )}
+    >
+      {getInitials(review.name || "")}
+    </div>
   );
 }
 
@@ -242,16 +231,17 @@ function MarqueeCard({ review }: { review: Review }) {
     lang === "en" && REVIEW_TEXTS_EN[review.id] ? REVIEW_TEXTS_EN[review.id] : review.text;
 
   return (
-    <div className="relative flex w-[290px] shrink-0 flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md transition-colors duration-300 hover:border-sky-300/40 hover:bg-white/[0.1] sm:w-[340px]">
-      <Quote className="absolute right-5 top-5 h-7 w-7 text-sky-300/20" aria-hidden="true" />
+    <div className="relative flex w-[290px] shrink-0 flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-md transition-colors duration-300 hover:border-white/30 hover:bg-white/[0.1] sm:w-[340px]">
+      <Quote className="absolute right-5 top-5 h-7 w-7 text-white/20" aria-hidden="true" />
       <StarRating rating={review.rating} size="sm" variant="dark" />
       <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-200">
         {reviewText}
       </p>
       <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
-        <div className="shrink-0 rounded-full bg-gradient-to-br from-sky-400 to-emerald-400 p-[2px]">
-          <ReviewAvatar review={review} className="h-10 w-10 ring-0 shadow-none" />
-        </div>
+        <ReviewAvatar
+          review={review}
+          className="h-10 w-10 bg-gradient-to-br from-[#1557B8] to-[#2F7BE8] text-[13px] text-white"
+        />
         <div>
           <p className="text-sm font-semibold leading-tight text-white">
             {review.name || t.reviews.anonymous}

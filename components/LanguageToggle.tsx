@@ -22,7 +22,7 @@ export function LanguageToggle({ variant = "light", className }: LanguageToggleP
     <div
       className={cn(
         "flex items-center rounded-full border p-0.5",
-        variant === "dark" ? "border-white/30" : "border-slate-300",
+        variant === "dark" ? "border-white/60 bg-[#0B3772]/65 backdrop-blur-sm" : "border-slate-300",
         className
       )}
       role="group"
@@ -37,9 +37,11 @@ export function LanguageToggle({ variant = "light", className }: LanguageToggleP
           className={cn(
             "rounded-full px-2.5 py-1 text-xs font-bold tracking-wide transition-all duration-200",
             lang === option.value
-              ? "bg-gradient-to-r from-sky-400 to-emerald-400 text-white shadow-sm"
+              ? variant === "dark"
+                ? "bg-gradient-to-r from-[#1557B8] to-[#2F7BE8] text-white shadow-sm"
+                : "bg-gradient-to-r from-[#0B3772] to-[#1557B8] text-white shadow-sm"
               : variant === "dark"
-                ? "text-white/70 hover:text-white"
+                ? "text-white/85 hover:text-white"
                 : "text-slate-500 hover:text-slate-800"
           )}
         >

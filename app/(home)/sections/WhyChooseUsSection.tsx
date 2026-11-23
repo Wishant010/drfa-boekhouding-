@@ -24,7 +24,7 @@ function UspPill({ icon, text }: { icon: React.ReactNode; text: string }) {
       className="inline-flex h-11 items-center gap-2 rounded-full border border-[#DCEAF5] bg-white px-4 text-sm font-medium text-[#334A62]"
       style={{ boxShadow: "0 5px 18px rgba(25, 70, 105, 0.045)" }}
     >
-      <span className="text-[#18B99C]">{icon}</span>
+      <span className="text-[#1557B8]">{icon}</span>
       {text}
     </div>
   );
@@ -55,20 +55,20 @@ function MoneybirdVisual() {
 // =============================================================================
 // Stijl per stap; de teksten komen uit de vertalingen (lib/translations.ts)
 const STEP_STYLES = [
-  { icon: Handshake, numberColor: "#249BF4", featured: false },
-  { icon: Settings2, numberColor: "#22CDAE", featured: true },
-  { icon: MonitorCheck, numberColor: "#249BF4", featured: false },
+  { icon: Handshake, numberColor: "#0B3772", featured: false },
+  { icon: Settings2, numberColor: "#0B3772", featured: true },
+  { icon: MonitorCheck, numberColor: "#0B3772", featured: false },
 ];
 
 function StepIcon({ icon: Icon, featured }: { icon: typeof Handshake; featured: boolean }) {
   return (
     <div
       className={`flex h-[58px] w-[58px] items-center justify-center rounded-[17px] text-white ${
-        featured ? "ring-4 ring-[#22CDAE]/15" : ""
+        featured ? "ring-4 ring-[#1557B8]/15" : ""
       }`}
       style={{
-        background: "linear-gradient(135deg, #249BF4, #22CDAE)",
-        boxShadow: "0 10px 26px rgba(34, 155, 208, 0.16)",
+        background: "linear-gradient(135deg, #0B3772, #1557B8)",
+        boxShadow: "0 10px 26px rgba(11, 55, 114, 0.25)",
       }}
     >
       <Icon className="h-6 w-6" />
@@ -85,7 +85,7 @@ function StepsDesktop() {
       <div className="absolute left-[16.67%] right-[16.67%] top-[57px] h-[2px] bg-[#DFEAF2]">
         <div
           className="h-full w-full"
-          style={{ background: "linear-gradient(90deg, #249DF3, #21CBAF)" }}
+          style={{ background: "linear-gradient(90deg, #0B3772, #1557B8)" }}
         />
       </div>
 
@@ -120,7 +120,7 @@ function StepsMobile() {
       <div className="absolute bottom-8 left-[28px] top-8 w-[2px] bg-[#DFEAF2]">
         <div
           className="h-full w-full"
-          style={{ background: "linear-gradient(180deg, #249DF3, #21CBAF)" }}
+          style={{ background: "linear-gradient(180deg, #0B3772, #1557B8)" }}
         />
       </div>
 
@@ -187,7 +187,7 @@ export function WhyChooseUsSection() {
               {t.why.titlePre}
               <span
                 className="bg-clip-text text-transparent"
-                style={{ backgroundImage: "linear-gradient(90deg, #269CF4 0%, #22CDAE 100%)" }}
+                style={{ backgroundImage: "linear-gradient(90deg, #0B3772 0%, #1557B8 100%)" }}
               >
                 {t.why.titleGradient}
               </span>
@@ -213,14 +213,14 @@ export function WhyChooseUsSection() {
               <Link
                 href="#contact"
                 className="group inline-flex h-[54px] items-center justify-center gap-2 rounded-[15px] px-[26px] font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-105"
-                style={{ background: "linear-gradient(90deg, #249BF4, #20CDA9)" }}
+                style={{ background: "linear-gradient(90deg, #0B3772, #1557B8)" }}
               >
                 {t.why.ctaPlan}
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="#pakketten"
-                className="inline-flex h-[54px] items-center justify-center rounded-[15px] border-[1.5px] border-[#BFD2E2] bg-white/60 px-[26px] font-semibold text-[#174A6D] transition-all duration-300 hover:border-[#249BF4] hover:bg-white"
+                className="inline-flex h-[54px] items-center justify-center rounded-[15px] border-[1.5px] border-[#BFD2E2] bg-white/60 px-[26px] font-semibold text-[#174A6D] transition-all duration-300 hover:border-[#0B3772] hover:bg-white"
               >
                 {t.why.ctaPackages}
               </Link>
@@ -228,16 +228,16 @@ export function WhyChooseUsSection() {
 
             {/* Trustline voor bestaande gebruikers van Moneybird, e-boekhouden.nl of Jortt */}
             <p className="mt-5 flex items-center gap-1.5 text-[13px] text-[#73869A]">
-              <Check className="h-3.5 w-3.5 shrink-0 text-[#18B99C]" />
+              <Check className="h-3.5 w-3.5 shrink-0 text-[#1557B8]" />
               {t.why.trustline}
             </p>
             <p className="mt-2 flex items-center gap-1.5 text-[13px] text-[#73869A]">
-              <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-[#18B99C]" />
+              <BadgeCheck className="h-3.5 w-3.5 shrink-0 text-[#1557B8]" />
               <a
                 href={SOCIALS.moneybirdExperts}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline decoration-[#BFD2E2] underline-offset-2 transition-colors hover:text-[#249BF4]"
+                className="underline decoration-[#BFD2E2] underline-offset-2 transition-colors hover:text-[#0B3772]"
               >
                 {t.why.expertsLine}
               </a>

@@ -30,14 +30,14 @@ export function ReviewsSection() {
       <div className="relative z-[2] pt-[120px] pb-[130px] sm:pt-[160px] md:pt-[190px] md:pb-[190px]">
         {/* Compacte kop */}
         <div className="mx-auto mb-8 max-w-2xl px-6 text-center md:mb-10">
-          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[13px] font-medium tracking-wide text-sky-200 backdrop-blur-sm">
+          <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[13px] font-medium tracking-wide text-white/85 backdrop-blur-sm">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
             {t.reviews.badge}
           </span>
 
           <h2 className="mt-4 text-[26px] font-bold leading-[1.15] text-white md:text-[32px]">
             {t.reviews.titlePre}
-            <span className="bg-gradient-to-r from-sky-300 to-emerald-300 bg-clip-text text-transparent">
+            <span className="text-white">
               {t.reviews.titleGradient}
             </span>
           </h2>

@@ -32,5 +32,4 @@ export interface Review {
   text: string;
   date: string;
   status: "pending" | "approved";
-  photo?: string;
 }
